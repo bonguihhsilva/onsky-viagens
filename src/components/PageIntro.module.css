@@ -1,0 +1,28 @@
+.intro {
+  display: grid;
+  gap: var(--space-lg);
+  padding-block: clamp(2.5rem, 1.5rem + 3.5vw, 5rem) var(--space-2xl);
+  animation: rise 800ms var(--ease-out) both;
+}
+
+.intro h1 {
+  font-size: clamp(2.6rem, 1.3rem + 4.6vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+/* statement on line one, accent phrase on line two */
+.intro h1 em {
+  display: block;
+  font-style: normal;
+  color: var(--terra);
+}
+
+.text {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 56ch;
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}

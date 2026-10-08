@@ -1,0 +1,171 @@
+.section {
+  padding-bottom: var(--space-xl);
+}
+
+.last {
+  padding-bottom: var(--space-section);
+}
+
+.section h2 {
+  font-size: var(--text-2xl);
+}
+
+/* Story: photo flush to the box edge, text padded */
+.storyBox {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.cover {
+  position: relative;
+  min-height: 26rem;
+  animation: unveil 1.2s var(--ease-out) 200ms both;
+}
+
+.cover img {
+  object-fit: cover;
+}
+
+.storyText {
+  display: grid;
+  align-content: center;
+  gap: var(--space-lg);
+  padding: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+.storyText p {
+  max-width: 54ch;
+}
+
+.storyText p + p {
+  color: var(--ink-soft);
+}
+
+/* Journey */
+.journeyBox {
+  padding: clamp(2rem, 1rem + 4vw, 4.5rem);
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+.journeyBox h2 {
+  max-width: 16ch;
+  margin-bottom: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+}
+
+/* Promises: 2x2 grid with hairline dividers */
+.promisesBox {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.promisesBox h2 {
+  padding: clamp(1.75rem, 1rem + 3vw, 3rem) clamp(1.75rem, 1rem + 3vw, 3rem) var(--space-lg);
+}
+
+.promisesBox ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.promisesBox li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: var(--space-md);
+  row-gap: var(--space-xs);
+  align-content: start;
+  padding: var(--space-xl) clamp(1.75rem, 1rem + 3vw, 3rem);
+}
+
+.promisesBox li:nth-child(even) {
+  border-left: 1px solid var(--line);
+}
+
+.promisesBox li:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
+}
+
+.promisesBox li span {
+  grid-row: span 2;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--terra);
+}
+
+.promisesBox h3 {
+  font-size: 1.6rem;
+}
+
+.promisesBox li p {
+  max-width: 42ch;
+  color: var(--ink-soft);
+}
+
+/* Visit */
+.visitBox {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: var(--space-xl) var(--space-2xl);
+  align-items: end;
+  padding: clamp(2rem, 1rem + 4vw, 4rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.visitBox h2 {
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.visitBox p {
+  max-width: 46ch;
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+}
+
+.visitActions {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-md);
+}
+
+@media (max-width: 860px) {
+  .storyBox,
+  .visitBox {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .promisesBox ol {
+    grid-template-columns: 1fr;
+  }
+
+  .promisesBox li:nth-child(even) {
+    border-left: 0;
+  }
+
+  .promisesBox li + li {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .storyBox,
+  .journeyBox,
+  .promisesBox,
+  .visitBox {
+    margin-inline: calc(-1 * var(--gutter) + 0.75rem);
+  }
+}

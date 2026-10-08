@@ -1,0 +1,72 @@
+.map {
+  margin: 0;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.country {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  fill: var(--ink-soft);
+}
+
+.river {
+  fill: none;
+  stroke: var(--sky);
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.bridge {
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+}
+
+.riverLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  fill: var(--sky);
+}
+
+.place {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  fill: var(--ink);
+}
+
+.city {
+  fill: var(--ink);
+}
+
+.poi {
+  fill: var(--paper);
+  stroke: var(--navy);
+  stroke-width: 2;
+}
+
+.highlight .poi {
+  fill: var(--terra);
+  stroke: var(--terra);
+}
+
+.highlight .place {
+  font-weight: 700;
+  fill: var(--terra-strong);
+}
+
+.map figcaption {
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
